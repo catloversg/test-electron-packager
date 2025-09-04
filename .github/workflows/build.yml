@@ -1,14 +1,16 @@
 name: Build
 
-on: workflow_dispatch
+on:
+  workflow_dispatch:
+  workflow_call:
 
 env:
   GH_TOKEN: ${{ github.token }}
 
 jobs:
-  build-mac:
-    name: Build macOS
-    runs-on: macos-latest
+  build-linux:
+    name: Build Linux
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - name: Use Node.js 20
@@ -19,13 +21,13 @@ jobs:
       - name: Install npm dependencies
         run: npm ci
       - name: Build the Electron app
-        run: npm run electron-mac
+        run: npm run electron-linux
       - name: Zip
         run: cd .build; for i in test-electron-packager-*; do zip -r "$i.zip" "$i"; done; cd ../;
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
-          name: build-artifacts-mac
+          name: build-artifacts-linux
           include-hidden-files: true
           path: .build/*.zip
           if-no-files-found: error

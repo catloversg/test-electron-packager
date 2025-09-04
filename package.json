@@ -5,6 +5,7 @@
     "scripts": {
         "start": "electron electron/main.js",
         "electron-win": "bash ./package-electron.sh win",
+        "electron-linux": "bash ./package-electron.sh linux",
         "electron-mac": "bash ./package-electron.sh mac"
     },
     "devDependencies": {
