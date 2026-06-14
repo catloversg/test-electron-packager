@@ -37,7 +37,7 @@ jobs:
       - name: Upload darwin-universal artifact
         uses: actions/upload-artifact@v7
         with:
-          name: bitburner-darwin-universal
+          name: test-electron-packager-darwin-universal
           include-hidden-files: true
-          path: .build/bitburner-darwin-universal/*
+          path: .build/test-electron-packager-darwin-universal/*
           if-no-files-found: error

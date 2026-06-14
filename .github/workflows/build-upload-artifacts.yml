@@ -24,12 +24,12 @@ jobs:
         uses: actions/download-artifact@v8
         with:
           path: .build
-          pattern: bitburner-*
+          pattern: test-electron-packager-*
           merge-multiple: false
       - name: List files
         run: ls -la .build
       - name: Zip
-        run: cd .build; for i in bitburner-*; do cd "$i"; zip -r "../$i.zip" *; cd ../; done; cd ../;
+        run: cd .build; for i in test-electron-packager-*; do cd "$i"; zip -r "../$i.zip" *; cd ../; done; cd ../;
       - name: List files
         run: |
           ls -la .build
