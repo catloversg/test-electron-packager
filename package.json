@@ -9,7 +9,7 @@
         "electron-mac": "bash ./package-electron.sh mac"
     },
     "devDependencies": {
-        "@electron/packager": "^18.4.4",
-        "electron": "^38.0.0"
+        "@electron/packager": "^20.0.1",
+        "electron": "^41.4.0"
     }
 }

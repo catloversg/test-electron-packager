@@ -3,7 +3,7 @@
     "version": "1.0.0",
     "main": "main.js",
     "dependencies": {
-        "@catloversg/steamworks.js": "^0.0.2",
-        "electron-log": "^5.4.3"
+        "@catloversg/steamworks.js": "^0.0.3",
+        "electron-log": "^5.4.4"
     }
 }

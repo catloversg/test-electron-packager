@@ -19,5 +19,5 @@ case $BUILD_PLATFORM in
   "linux")
     electron-packager .package test-electron-packager --platform linux --arch x64 --out .build --overwrite;;
   "mac")
-    electron-packager .package test-electron-packager --platform darwin --arch universal --osx-universal.x64ArchFiles="Contents/Resources/app/node_modules/@catloversg/steamworks.js/dist/osx/*" --out .build --overwrite;;
+    electron-packager .package test-electron-packager --platform darwin --arch universal --out .build --asar.unpack='**/node_modules/@catloversg/steamworks.js/**/*.{dylib,node}' --overwrite;;
 esac
